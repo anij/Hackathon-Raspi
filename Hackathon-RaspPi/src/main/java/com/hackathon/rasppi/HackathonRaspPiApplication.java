@@ -27,7 +27,7 @@ public class HackathonRaspPiApplication {
 		try {
 			testDH11();
 		} catch (Exception e) {
-			System.out.println("Exception in :: " + e);
+			e.printStackTrace();
 		}
 
 	}
@@ -38,7 +38,8 @@ public class HackathonRaspPiApplication {
 		BufferedReader bri = new BufferedReader(new InputStreamReader(p.getInputStream()));
 		if ((line = bri.readLine()) != null) {
 			System.out.println(line);
-			if (!(line.contains("ERR_CRC") || line.contains("ERR_RNG"))) {
+			//if (!(line.contains("ERR_CRC") || line.contains("ERR_RNG"))) {
+			if (!(line.contains("ERR_CRC") || line.contains("ERR_RANGE"))) {
 
 				data = line.split("ABC");
 				System.out.println(data[0]);
