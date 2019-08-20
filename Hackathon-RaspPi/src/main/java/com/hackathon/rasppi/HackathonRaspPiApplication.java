@@ -37,6 +37,7 @@ public class HackathonRaspPiApplication {
 		Process p = rt.exec("python /home/pi/Downloads/Test/dht.py");
 		BufferedReader bri = new BufferedReader(new InputStreamReader(p.getInputStream()));
 		if ((line = bri.readLine()) != null) {
+			System.out.println(line);
 			if (!(line.contains("ERR_CRC") || line.contains("ERR_RNG"))) {
 
 				data = line.split("ABC");
